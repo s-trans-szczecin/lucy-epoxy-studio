@@ -70,13 +70,31 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
 
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
+        position: relative;
         font-family: 'Inter', sans-serif;
         background: var(--bg);
         color: var(--text);
         line-height: 1.65;
+        overflow-x: hidden;
       }
 
-      .container { width: min(1180px, 92%); margin-inline: auto; }
+      body::before {
+        content: '';
+        position: fixed;
+        top: -22%;
+        left: -38%;
+        width: 58%;
+        height: 145%;
+        pointer-events: none;
+        z-index: 1;
+        background: linear-gradient(112deg, transparent 0%, rgba(255, 247, 218, 0.22) 45%, rgba(255, 238, 183, 0.42) 50%, rgba(255, 247, 218, 0.18) 55%, transparent 100%);
+        filter: blur(16px);
+        mix-blend-mode: soft-light;
+        animation: lighthouse-beam 19s ease-in-out infinite;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      .container { width: min(1180px, 92%); margin-inline: auto; position: relative; z-index: 2; }
       .section { padding: 5rem 0; }
       .section-sm { padding: 3.25rem 0; }
       .muted { color: var(--muted); }
@@ -92,6 +110,8 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
       h2 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 
       .btn {
+        position: relative;
+        overflow: hidden;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -104,7 +124,17 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
         text-decoration: none;
         transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
       }
-      .btn:hover { transform: translateY(-2px); }
+      .btn::after {
+        content: '';
+        position: absolute;
+        inset: -120% 40% -120% -40%;
+        transform: rotate(12deg) translateX(-180%);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+        transition: transform .55s ease;
+      }
+      .btn:hover { transform: translateY(-2px) scale(1.01); }
+      .btn:hover::after { transform: rotate(12deg) translateX(220%); }
+
       .btn-primary {
         background: linear-gradient(135deg, #d2b57a, var(--gold));
         color: #fff;
@@ -128,6 +158,10 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
         align-items: center;
         justify-content: center;
       }
+      .logo-coin {
+        border-radius: 50%;
+        animation: logo-rotate 24s linear infinite;
+      }
       .logo-magic__halo {
         position: absolute;
         inset: -7px;
@@ -137,6 +171,16 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
         opacity: 0;
         transform: rotate(0deg) scale(0.98);
         animation: halo-spin 16s ease-in-out infinite;
+      }
+      .logo-magic__flash {
+        position: absolute;
+        inset: 15%;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0;
+        background: radial-gradient(circle, rgba(255, 249, 226, .85) 0%, rgba(252, 227, 173, .38) 36%, transparent 70%);
+        filter: blur(2px);
+        animation: logo-flash 12s ease-in-out infinite;
       }
       .logo-magic__halo::before {
         content: '';
@@ -148,6 +192,18 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
         filter: drop-shadow(0 0 6px rgba(220, 193, 141, 0.42));
       }
 
+      @keyframes logo-rotate {
+        0% { transform: rotate(0deg); }
+        50% { transform: rotate(180deg); filter: brightness(1.1) drop-shadow(0 0 10px rgba(228, 195, 126, .28)); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes logo-flash {
+        0%, 45%, 100% { opacity: 0; }
+        50% { opacity: .88; }
+        56% { opacity: .08; }
+      }
+
       @keyframes halo-spin {
         0%, 52%, 100% { opacity: 0; transform: rotate(0deg) scale(0.98); }
         58% { opacity: .25; }
@@ -155,7 +211,16 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
         82% { opacity: .2; transform: rotate(360deg) scale(1.01); }
       }
 
+      @keyframes lighthouse-beam {
+        0%, 100% { transform: translateX(-18vw) rotate(-7deg); opacity: 0; }
+        13% { opacity: .08; }
+        38% { transform: translateX(140vw) rotate(-6deg); opacity: .2; }
+        56% { opacity: .03; }
+        78% { transform: translateX(-12vw) rotate(-6deg); opacity: 0; }
+      }
+
       @media (max-width: 760px) {
+        body::before { width: 90%; left: -56%; opacity: .65; }
         .section { padding: 3.5rem 0; }
         .section-sm { padding: 2.6rem 0; }
       }
