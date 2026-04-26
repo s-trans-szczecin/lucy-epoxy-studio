@@ -1,0 +1,30 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import ProjectsSection from '../../components/ProjectsSection.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/realizacje' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/projects' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/realisierungen' },
+];
+---
+
+<MainLayout
+  title="Realisierungen | Lucy Epoxy Studio"
+  description="Ausgewählte Epoxidharz-Realisierungen: maßgefertigte Tische, Arbeitsplatten und Design-Details."
+  lang="de"
+  pathname="/de/realisierungen"
+  alternates={alternates}
+>
+  <Header ctaHref="/de/kontakt" ctaLabel="Projekt anfragen" />
+  <main class="section-sm">
+    <div class="container">
+      <p class="gold">Portfolio</p>
+      <h1 style="margin-top:.5rem;">Ausgewählte Realisierungen</h1>
+    </div>
+    <ProjectsSection />
+  </main>
+  <Footer />
+</MainLayout>

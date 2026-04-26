@@ -1,0 +1,33 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/' },
+];
+---
+
+<MainLayout
+  title="Lucy Epoxy Studio | Premium Epoxy Resin Furniture in Europe"
+  description="Custom epoxy tables, countertops and interior details for clients across the EU. Elegant design, precision craftsmanship."
+  lang="en"
+  pathname="/en/"
+  alternates={alternates}
+>
+  <Header ctaHref="/en/contact" ctaLabel="Get a quote" />
+  <main class="section">
+    <div class="container card" style="padding:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;align-items:center;">
+      <div>
+        <p class="gold">EU Market</p>
+        <h1 style="margin-top:.5rem;">Premium epoxy craftsmanship for modern interiors</h1>
+        <p class="muted" style="margin-top:.8rem;">We support private and business clients across Europe with clear communication, minimal style and handcrafted quality.</p>
+        <a href="/en/contact" class="btn btn-primary" style="margin-top:1rem;">Request a quote</a>
+      </div>
+      <img src="/images/hero-table.jpg" alt="Epoxy table project" style="width:100%;border-radius:16px;object-fit:cover;min-height:300px;" />
+    </div>
+  </main>
+  <Footer />
+</MainLayout>

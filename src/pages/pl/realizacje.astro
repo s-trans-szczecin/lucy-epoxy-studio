@@ -1,0 +1,31 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import ProjectsSection from '../../components/ProjectsSection.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/realizacje' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/projects' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/realisierungen' },
+];
+---
+
+<MainLayout
+  title="Realizacje | Lucy Epoxy Studio"
+  description="Portfolio premium realizacji z żywicy epoksydowej: stoły, blaty i detale do eleganckich wnętrz."
+  lang="pl"
+  pathname="/pl/realizacje"
+  alternates={alternates}
+>
+  <Header ctaHref="/pl/kontakt" ctaLabel="Wyceń projekt" />
+  <main class="section-sm">
+    <div class="container">
+      <p class="gold">Galeria</p>
+      <h1 style="margin-top:.5rem;">Nasze realizacje</h1>
+      <p class="muted" style="max-width:62ch;margin-top:.7rem;">Każdy projekt przygotowujemy indywidualnie. Poniżej zobaczysz przykładowe style i kierunki wykończeń.</p>
+    </div>
+    <ProjectsSection />
+  </main>
+  <Footer />
+</MainLayout>

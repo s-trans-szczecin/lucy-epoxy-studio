@@ -1,0 +1,38 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/kontakt' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/contact' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/kontakt' },
+];
+---
+
+<MainLayout
+  title="Kontakt | Lucy Epoxy Studio"
+  description="Skontaktuj się z Lucy Epoxy Studio i zamów indywidualną wycenę realizacji z żywicy epoksydowej."
+  lang="pl"
+  pathname="/pl/kontakt"
+  alternates={alternates}
+>
+  <Header ctaHref="/pl/kontakt" ctaLabel="Napisz" />
+  <main class="section">
+    <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;">
+      <section class="card" style="padding:1.4rem;">
+        <p class="gold">Kontakt</p>
+        <h1 style="margin-top:.5rem;">Porozmawiajmy o Twoim projekcie</h1>
+        <p class="muted" style="margin-top:1rem;">Napisz na <a href="mailto:info@lucyepoxy.com">info@lucyepoxy.com</a> lub wyślij formularz. Odpowiadamy zwykle w 24h.</p>
+      </section>
+
+      <form class="card" style="padding:1.4rem;display:grid;gap:.75rem;" action="mailto:info@lucyepoxy.com" method="post" enctype="text/plain">
+        <label>Imię i nazwisko <input required name="name" style="width:100%;margin-top:.3rem;padding:.7rem;border:1px solid #d8ccb7;border-radius:10px;" /></label>
+        <label>E-mail <input required type="email" name="email" style="width:100%;margin-top:.3rem;padding:.7rem;border:1px solid #d8ccb7;border-radius:10px;" /></label>
+        <label>Treść zapytania <textarea required name="message" rows="5" style="width:100%;margin-top:.3rem;padding:.7rem;border:1px solid #d8ccb7;border-radius:10px;"></textarea></label>
+        <button type="submit" class="btn btn-primary" style="border:none;">Wyślij zapytanie</button>
+      </form>
+    </div>
+  </main>
+  <Footer />
+</MainLayout>

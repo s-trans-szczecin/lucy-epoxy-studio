@@ -1,0 +1,33 @@
+---
+interface Props {
+  ctaHref?: string;
+  ctaLabel?: string;
+}
+
+const { ctaHref = '/pl/kontakt', ctaLabel = 'Zapytaj o wycenę' } = Astro.props as Props;
+---
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(247,243,238,.92);border-bottom:1px solid #e6ddce;backdrop-filter:blur(7px);">
+  <div class="container" style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.2rem;padding:.95rem 0;">
+    <a href="/" style="display:flex;align-items:center;gap:.75rem;min-width:max-content;">
+      <span class="logo-magic" style="width:50px;height:50px;">
+        <img src="/images/logoLEC1.png" alt="LE emblem" style="width:50px;height:50px;border-radius:50%;display:block;object-fit:cover;" />
+        <span class="logo-magic__halo"></span>
+      </span>
+      <div style="line-height:1.1;">
+        <strong style="font-family:'Playfair Display',serif;font-size:1.2rem;letter-spacing:.08em;color:#a8894d;">LUCY EPOXY</strong>
+        <small style="display:block;letter-spacing:.38em;color:#9c8b69;">STUDIO</small>
+      </div>
+    </a>
+
+    <nav style="justify-self:center;display:flex;gap:1.15rem;flex-wrap:wrap;font-size:.95rem;">
+      <a href="/">Home</a>
+      <a href="/pl/realizacje">Realizacje</a>
+      <a href="/pl/kontakt">Kontakt</a>
+      <a href="/en/">EN</a>
+      <a href="/de/">DE</a>
+    </nav>
+
+    <a href={ctaHref} class="btn btn-primary" style="min-height:42px;padding:.58rem 1rem;">{ctaLabel}</a>
+  </div>
+</header>

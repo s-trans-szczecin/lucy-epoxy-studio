@@ -1,0 +1,29 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/kontakt' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/contact' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/kontakt' },
+];
+---
+
+<MainLayout
+  title="Contact | Lucy Epoxy Studio"
+  description="Contact Lucy Epoxy Studio for a premium epoxy project quote in your country within the EU."
+  lang="en"
+  pathname="/en/contact"
+  alternates={alternates}
+>
+  <Header ctaHref="/en/contact" ctaLabel="Write to us" />
+  <main class="section">
+    <div class="container card" style="padding:1.6rem;max-width:760px;">
+      <p class="gold">Contact</p>
+      <h1 style="margin-top:.55rem;">Tell us about your project</h1>
+      <p class="muted" style="margin-top:.8rem;">Send details to <a href="mailto:info@lucyepoxy.com">info@lucyepoxy.com</a> and we will reply with next steps and pricing options.</p>
+    </div>
+  </main>
+  <Footer />
+</MainLayout>
