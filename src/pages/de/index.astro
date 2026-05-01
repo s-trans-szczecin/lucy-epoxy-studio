@@ -1,6 +1,11 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import Header from '../../components/Header.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import FeaturesSection from '../../components/FeaturesSection.astro';
+import ProjectsSection from '../../components/ProjectsSection.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import CTASection from '../../components/CTASection.astro';
 import Footer from '../../components/Footer.astro';
 
 const alternates = [
@@ -18,26 +23,12 @@ const alternates = [
   alternates={alternates}
 >
   <Header ctaHref="/de/kontakt" ctaLabel="Projekt anfragen" />
-  <main class="section">
-    <div class="container card" style="padding:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;align-items:center;">
-      <div>
-        <p class="gold">Deutscher Markt</p>
-        <h1 style="margin-top:.5rem;">Exklusive Epoxidharz-Projekte für anspruchsvolle Kunden</h1>
-        <p class="muted" style="margin-top:.8rem;">Wir verbinden minimalistisches Design mit präziser Handarbeit und klarer Kommunikation vom Entwurf bis zur Umsetzung.</p>
-        <a href="/de/kontakt" class="btn btn-primary" style="margin-top:1rem;">Jetzt anfragen</a>
-      </div>
-
-      <div style="position:relative;min-height:300px;">
-        <img src="/images/hero-table.jpg" alt="Epoxidharz Tisch" style="width:100%;border-radius:16px;object-fit:cover;min-height:300px;" />
-        <div class="mobile-only" style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;">
-          <span class="logo-magic" style="width:min(320px,78vw);">
-            <img src="/images/logo-lec.png" alt="Lucy Epoxy Studio Hologramm Logo" class="logo-coin" style="width:100%;height:auto;" />
-            <span class="logo-magic__halo"></span>
-            <span class="logo-magic__flash"></span>
-          </span>
-        </div>
-      </div>
-    </div>
+  <main>
+    <HeroSection />
+    <FeaturesSection />
+    <ProjectsSection />
+    <AboutSection />
+    <CTASection />
   </main>
   <Footer />
 </MainLayout>
