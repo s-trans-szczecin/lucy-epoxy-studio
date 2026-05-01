@@ -1,27 +1,27 @@
-<section class="section" style="padding-top:1.6rem;">
-  <div class="container hero-shell" style="overflow:hidden;position:relative;border-radius:0;min-height:560px;display:grid;grid-template-columns:1fr;">
-    <img src="/images/hero-table.jpg" alt="Ekskluzywny stół epoxy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
-    <div class="hero-overlay" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,243,238,.96) 0%, rgba(247,243,238,.83) 42%, rgba(247,243,238,.18) 75%, rgba(247,243,238,.1) 100%);"></div>
+---
+const pathname = Astro.url.pathname;
+const lang = pathname.startsWith('/en') ? 'en' : pathname.startsWith('/de') ? 'de' : 'pl';
 
-    <div style="position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;align-items:center;padding:3rem 2.5rem;">
-      <div>
-        <h1 style="max-width:16ch;">Pasja, która zamienia naturę w luksus.</h1>
-        <p class="muted" style="margin-top:1rem;max-width:56ch;">Tworzę unikatowe stoły z drewna, żywicy i kwiatów dla osób, które cenią rzeczy wyjątkowe i niepowtarzalne.</p>
-        <p class="muted" style="margin-top:.55rem;font-weight:600;">Jeden egzemplarz. Jedna historia.</p>
-        <div style="margin-top:1.35rem;display:flex;gap:.75rem;flex-wrap:wrap;">
-          <a href="/pl/realizacje" class="btn btn-primary">Zobacz projekty</a>
-          <a href="/pl/kontakt" class="btn btn-secondary">Zapytaj o wycenę</a>
-        </div>
-      </div>
-
-      <div class="hero-logo-wrap" style="justify-self:center;text-align:center;">
-        <span class="logo-magic" style="width:min(430px,85vw);">
-          <img src="/images/logo-lec.png" alt="Logo Lucy Epoxy Studio" class="logo-coin" style="width:100%;height:auto;box-shadow:0 18px 40px rgba(30,30,30,.15);" />
-          <span class="logo-magic__halo" style="inset:-10px;"></span>
-          <span class="logo-magic__flash"></span>
-        </span>
-      </div>
+const copy = {
+  pl: { label: 'Projekty', title: 'Zobacz moje projekty', cta: 'Zobacz więcej projektów', href: '/pl/realizacje' },
+  en: { label: 'Projects', title: 'See my projects', cta: 'See more projects', href: '/en/projects' },
+  de: { label: 'Projekte', title: 'Sehen Sie meine Projekte', cta: 'Mehr Projekte ansehen', href: '/de/realisierungen' },
+} as const;
+const t = copy[lang];
+---
+<section class="section-sm" style="background:#f8f4ee;">
+  <div class="container" style="text-align:center;">
+    <p class="gold">{t.label}</p>
+    <h2 style="margin-top:.5rem;">{t.title}</h2>
+    <div style="margin-top:1.2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;">
+      <img src="/images/project1.jpg" alt="Project 1" class="card" style="width:100%;aspect-ratio:1/1;object-fit:cover;" />
+      <img src="/images/project2.jpg" alt="Project 2" class="card" style="width:100%;aspect-ratio:1/1;object-fit:cover;" />
+      <img src="/images/project3.jpg" alt="Project 3" class="card" style="width:100%;aspect-ratio:1/1;object-fit:cover;" />
+      <img src="/images/project4.jpg" alt="Project 4" class="card" style="width:100%;aspect-ratio:1/1;object-fit:cover;" />
+      <img src="/images/project5.jpg" alt="Project 5" class="card" style="width:100%;aspect-ratio:1/1;object-fit:cover;" />
+      <img src="/images/project6.jpg" alt="Project 6" class="card" style="width:100%;aspect-ratio:1/1;object-fit:cover;" />
+      <img src="/images/project7.jpg" alt="Project 7" class="card" style="width:100%;aspect-ratio:1/1;object-fit:cover;" />
     </div>
+    <a href={t.href} class="btn btn-secondary" style="margin-top:1.15rem;">{t.cta}</a>
   </div>
 </section>
-

@@ -1,11 +1,39 @@
-<section class="section-sm">
-  <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;align-items:stretch;">
-    <article class="card" style="padding:1.6rem;display:flex;flex-direction:column;justify-content:center;">
-      <p class="gold">O mnie</p>
-      <h2 style="margin-top:.5rem;max-width:14ch;">Tworzę coś więcej niż stoły</h2>
-      <p class="muted" style="margin-top:.8rem;">To autorska pracownia, w której natura spotyka się z nowoczesnym designem. Każdy projekt tworzę z pasją i precyzją.</p>
-      <a href="/pl/kontakt" class="btn btn-primary" style="margin-top:1rem;max-width:max-content;">Dowiedz się więcej</a>
-    </article>
-    <img src="/images/about-workshop.jpg" alt="Praca nad blatem epoxy" class="card" style="width:100%;min-height:320px;object-fit:cover;" />
+---
+const pathname = Astro.url.pathname;
+const lang = pathname.startsWith('/en') ? 'en' : pathname.startsWith('/de') ? 'de' : 'pl';
+
+const copy = {
+  pl: [
+    ['Unikalne projekty', 'Każdy projekt jest dopasowany do Twojej przestrzeni.'],
+    ['Ręczne wykonanie', '100% handmade, z dbałością o detal i jakość.'],
+    ['Trwałość na lata', 'Materiały premium i odporna żywica epoksydowa.'],
+    ['Pasja i doświadczenie', 'Łącze rzemiosło z nowoczesnym designem.'],
+  ],
+  en: [
+    ['Unique projects', 'Each project is tailored to your space.'],
+    ['Handcrafted', '100% handmade with attention to detail and quality.'],
+    ['Built to last', 'Premium materials and durable epoxy resin.'],
+    ['Passion & experience', 'I connect craftsmanship with modern design.'],
+  ],
+  de: [
+    ['Einzigartige Projekte', 'Jedes Projekt wird an Ihren Raum angepasst.'],
+    ['Handarbeit', '100 % handgefertigt mit Liebe zum Detail und Qualität.'],
+    ['Langlebigkeit', 'Premium-Materialien und widerstandsfähiges Epoxidharz.'],
+    ['Leidenschaft & Erfahrung', 'Ich verbinde Handwerk mit modernem Design.'],
+  ],
+} as const;
+
+const icons = ['❧', '◈', '⌁', '♡'];
+const t = copy[lang];
+---
+<section class="section-sm" style="padding-top:1.5rem;">
+  <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;border-top:1px solid #e9e1d5;border-bottom:1px solid #e9e1d5;background:#f9f5ef;">
+    {t.map(([title, text], i) => (
+      <article style={`padding:1.5rem 1rem;text-align:center;${i < 3 ? 'border-right:1px solid #ece3d8;' : ''}`}>
+        <p style="font-size:1.45rem;color:#ba9b60;">{icons[i]}</p>
+        <h3 style="font-size:1.05rem;margin-top:.4rem;">{title}</h3>
+        <p class="muted" style="font-size:.94rem;margin-top:.45rem;">{text}</p>
+      </article>
+    ))}
   </div>
 </section>

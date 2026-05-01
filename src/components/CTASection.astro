@@ -1,6 +1,17 @@
+---
+const pathname = Astro.url.pathname;
+const lang = pathname.startsWith('/en') ? 'en' : pathname.startsWith('/de') ? 'de' : 'pl';
+
+const copy = {
+  pl: { title: 'Masz pomysł? Stwórzmy coś wyjątkowego razem.', cta: 'Zapytaj o wycenę', href: '/pl/kontakt' },
+  en: { title: 'Have an idea? Let’s create something exceptional together.', cta: 'Request a quote', href: '/en/contact' },
+  de: { title: 'Haben Sie eine Idee? Lassen Sie uns gemeinsam etwas Einzigartiges schaffen.', cta: 'Angebot anfragen', href: '/de/kontakt' },
+} as const;
+const t = copy[lang];
+---
 <section class="section-sm" style="padding-top:1rem;">
   <div class="container card" style="background:linear-gradient(180deg,#fbf7f1,#f4ede2);padding:1.6rem;text-align:center;">
-    <h3 style="font-size:clamp(1.5rem,3vw,2rem);">Masz pomysł? Stwórzmy coś wyjątkowego razem.</h3>
-    <a href="/pl/kontakt" class="btn btn-primary" style="margin-top:.95rem;">Zapytaj o wycenę</a>
+    <h3 style="font-size:clamp(1.5rem,3vw,2rem);">{t.title}</h3>
+    <a href={t.href} class="btn btn-primary" style="margin-top:.95rem;">{t.cta}</a>
   </div>
 </section>
