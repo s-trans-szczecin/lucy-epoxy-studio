@@ -1,0 +1,21 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+<MainLayout title="O mnie | Lucy Epoxy Studio" description="Historia Lucyny Zawadzkiej-Szpak i pasji do rzemiosła." lang="pl" pathname="/pl/o-mnie">
+  <Header ctaHref="/pl/kontakt" ctaLabel="Wyceń projekt" />
+  <main class="section-sm"><div class="container" style="display:grid;gap:1rem;">
+    <img src="/images/about-workshop.jpg" alt="Lucyna przy pracy" class="card" style="width:100%;max-height:520px;object-fit:cover;" />
+    <article class="card" style="padding:1.3rem;white-space:pre-line;line-height:1.7;">
+Jako osoba z niepełnosprawnością długo szukałam swojego miejsca — nie tylko na rynku pracy, ale także w życiu. Wiele dróg okazało się zamkniętych, lecz właśnie wtedy odkryłam rzemiosło, które stało się dla mnie szansą, siłą i nowym początkiem.
+
+To, co zaczęło się jako pomysł na własny biznes, z czasem przerodziło się w prawdziwą pasję. W swojej pracy odnalazłam siebie, sens i radość tworzenia. Każde zlecenie wykonuję z sercem, starannością i wdzięcznością, bo wiem, jak wiele znaczy możliwość robienia tego, co się kocha.
+
+Wybierając moje usługi, wspierasz nie tylko mały biznes, ale także historię pełną determinacji, odwagi i wiary, że marzenia można spełniać mimo przeciwności. Zapraszam Cię do współpracy — tworzę z pasji i dla ludzi.
+    </article>
+    <img src="/images/hero-table.jpg" alt="Hero table" class="card" style="width:100%;max-height:420px;object-fit:cover;" />
+    <p style="font-family:cursive;color:#b8954f;font-size:2rem;transform:rotate(-6deg);opacity:.9;">Lυcуηα Zαωαdzкα-Szpαк</p>
+  </div></main>
+  <Footer />
+</MainLayout>

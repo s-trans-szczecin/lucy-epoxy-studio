@@ -1,0 +1,19 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+<MainLayout title="About me | Lucy Epoxy Studio" description="The story behind Lucy Epoxy Studio." lang="en" pathname="/en/about">
+  <Header ctaHref="/en/contact" ctaLabel="Get a quote" />
+  <main class="section-sm"><div class="container" style="display:grid;gap:1rem;">
+    <img src="/images/about-workshop.jpg" alt="Lucyna at work" class="card" style="width:100%;max-height:520px;object-fit:cover;" />
+    <article class="card" style="padding:1.3rem;white-space:pre-line;line-height:1.7;">As a person with a disability, I searched for my place for a long time — not only in the job market, but also in life. Many paths were closed to me, and that is exactly when I discovered craftsmanship, which became my chance, my strength, and a new beginning.
+
+What started as an idea for my own business gradually turned into a true passion. In my work I found myself, meaning, and the joy of creating. I complete every order with heart, care, and gratitude, because I know how much it means to do what you love.
+
+By choosing my services, you support not only a small business, but also a story of determination, courage, and faith that dreams can come true despite obstacles. I invite you to work with me — I create with passion and for people.</article>
+    <img src="/images/hero-table.jpg" alt="Hero table" class="card" style="width:100%;max-height:420px;object-fit:cover;" />
+    <p style="font-family:cursive;color:#b8954f;font-size:2rem;transform:rotate(-6deg);opacity:.9;">Lυcуηα Zαωαdzкα-Szpαк</p>
+  </div></main>
+  <Footer />
+</MainLayout>

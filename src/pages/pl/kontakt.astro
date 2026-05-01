@@ -28,7 +28,9 @@ const alternates = [
         <p>💬 <a href="https://wa.me/48603362741" target="_blank" rel="noopener noreferrer">WhatsApp: 0048 603 362 741</a></p>
       </section>
 
-      <form class="card" style="padding:1.4rem;display:grid;gap:.75rem;" action="mailto:info@lucyepoxy.com" method="post" enctype="text/plain">
+      <form class="card" style="padding:1.4rem;display:grid;gap:.75rem;" action="https://formsubmit.co/info@lucyepoxy.com" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://lucyepoxy.com/pl/kontakt?sent=1" />
         <label>Imię i nazwisko <input required name="name" style="width:100%;margin-top:.3rem;padding:.7rem;border:1px solid #d8ccb7;border-radius:10px;" /></label>
         <label>E-mail <input required type="email" name="email" style="width:100%;margin-top:.3rem;padding:.7rem;border:1px solid #d8ccb7;border-radius:10px;" /></label>
         <label>Treść zapytania <textarea required name="message" rows="5" style="width:100%;margin-top:.3rem;padding:.7rem;border:1px solid #d8ccb7;border-radius:10px;"></textarea></label>

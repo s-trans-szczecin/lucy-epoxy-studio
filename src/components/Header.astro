@@ -14,7 +14,8 @@ const navMap = {
     contact: '/pl/kontakt',
     app: '/pl/aplikacja',
     extras: '/pl/dodatki',
-    labels: { home: 'Home', projects: 'Projekty', contact: 'Kontakt', app: 'Aplikacja', extras: 'Dodatki', cta: 'Zapytaj o wycenę' },
+    about: '/pl/o-mnie',
+    labels: { home: 'Home', projects: 'Projekty', about: 'O mnie', contact: 'Kontakt', app: 'Aplikacja', extras: 'Dodatki', cta: 'Zapytaj o wycenę' },
   },
   en: {
     home: '/en/',
@@ -22,7 +23,8 @@ const navMap = {
     contact: '/en/contact',
     app: '/en/mobile-app',
     extras: '/en/accessories',
-    labels: { home: 'Home', projects: 'Projects', contact: 'Contact', app: 'Mobile app', extras: 'Accessories', cta: 'Get a quote' },
+    about: '/en/about',
+    labels: { home: 'Home', projects: 'Projects', about: 'About', contact: 'Contact', app: 'Mobile app', extras: 'Accessories', cta: 'Get a quote' },
   },
   de: {
     home: '/de/',
@@ -30,7 +32,8 @@ const navMap = {
     contact: '/de/kontakt',
     app: '/de/android-app',
     extras: '/de/zubehoer',
-    labels: { home: 'Home', projects: 'Projekte', contact: 'Kontakt', app: 'Android App', extras: 'Zubehör', cta: 'Angebot' },
+    about: '/de/ueber-mich',
+    labels: { home: 'Home', projects: 'Projekte', about: 'Über mich', contact: 'Kontakt', app: 'Android App', extras: 'Zubehör', cta: 'Angebot' },
   },
 } as const;
 
@@ -45,6 +48,7 @@ const { ctaHref = current.contact, ctaLabel = current.labels.cta } = Astro.props
         <a href={current.home} class="btn btn-secondary nav-btn">{current.labels.home}</a>
         <a href={current.projects} class="btn btn-secondary nav-btn">{current.labels.projects}</a>
         <a href={current.extras} class="btn btn-secondary nav-btn">{current.labels.extras}</a>
+        <a href={current.about} class="btn btn-secondary nav-btn">{current.labels.about}</a>
         <a href={current.contact} class="btn btn-secondary nav-btn">{current.labels.contact}</a>
         <a href={current.app} class="btn btn-secondary nav-btn">{current.labels.app}</a>
         <a href="/" class="btn btn-secondary nav-btn">PL</a>
