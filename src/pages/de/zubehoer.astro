@@ -1,0 +1,34 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/dodatki' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/accessories' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/zubehoer' },
+];
+---
+
+<MainLayout
+  title="Zubehör | Lucy Epoxy Studio"
+  description="Zubehör und Veredelungsoptionen für Epoxidharz-Tische: Gestelle, Unterbauten, Kanten und Premium-Details."
+  lang="de"
+  pathname="/de/zubehoer"
+  alternates={alternates}
+>
+  <Header ctaHref="/de/kontakt" ctaLabel="Projekt anfragen" />
+  <main class="section-sm">
+    <div class="container">
+      <p class="gold">Angebot</p>
+      <h1 style="margin-top:.5rem;">Zubehör & Veredelung</h1>
+      <p class="muted" style="max-width:62ch;margin-top:.7rem;">Wir wählen Zubehör passend zum Innenraum und Stil der Platte – von modernen Metallgestellen bis zu eleganten Abschlussdetails.</p>
+      <div class="grid" style="margin-top:1.5rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+        <img src="/images/project5.jpg" alt="Zubehör für Epoxidharz-Tisch" style="width:100%;border-radius:14px;" loading="lazy" />
+        <img src="/images/project6.jpg" alt="Premium-Veredelung der Tischplatte" style="width:100%;border-radius:14px;" loading="lazy" />
+        <img src="/images/project7.jpg" alt="Design-Zubehör für Epoxy-Projekte" style="width:100%;border-radius:14px;" loading="lazy" />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</MainLayout>

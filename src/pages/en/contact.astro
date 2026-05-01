@@ -19,10 +19,21 @@ const alternates = [
 >
   <Header ctaHref="/en/contact" ctaLabel="Write to us" />
   <main class="section">
-    <div class="container card" style="padding:1.6rem;max-width:760px;">
-      <p class="gold">Contact</p>
-      <h1 style="margin-top:.55rem;">Tell us about your project</h1>
-      <p class="muted" style="margin-top:.8rem;">Send details to <a href="mailto:info@lucyepoxy.com">info@lucyepoxy.com</a> and we will reply with next steps and pricing options.</p>
+    <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;">
+      <section class="card" style="padding:1.4rem;display:grid;gap:.7rem;">
+        <p class="gold">Contact</p>
+        <h1 style="margin-top:.2rem;">Tell me about your project</h1>
+        <p class="muted">Send details to <a href="mailto:info@lucyepoxy.com">info@lucyepoxy.com</a>, call me or message on WhatsApp.</p>
+        <p>📞 <a href="tel:+48603362741">0048 603 362 741</a></p>
+        <p>💬 <a href="https://wa.me/48603362741" target="_blank" rel="noopener noreferrer">WhatsApp: 0048 603 362 741</a></p>
+      </section>
+
+      <form class="card" style="padding:1.4rem;display:grid;gap:.75rem;" action="mailto:info@lucyepoxy.com" method="post" enctype="text/plain">
+        <label>Full name <input required name="name" style="width:100%;margin-top:.3rem;padding:.7rem;border:1px solid #d8ccb7;border-radius:10px;" /></label>
+        <label>Email <input required type="email" name="email" style="width:100%;margin-top:.3rem;padding:.7rem;border:1px solid #d8ccb7;border-radius:10px;" /></label>
+        <label>Project details <textarea required name="message" rows="5" style="width:100%;margin-top:.3rem;padding:.7rem;border:1px solid #d8ccb7;border-radius:10px;"></textarea></label>
+        <button type="submit" class="btn btn-primary" style="border:none;">Send inquiry</button>
+      </form>
     </div>
   </main>
   <Footer />

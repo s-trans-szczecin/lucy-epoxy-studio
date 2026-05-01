@@ -11,8 +11,8 @@ const alternates = [
 ---
 
 <MainLayout
-  title="Lucy Epoxy Studio | Exklusive Epoxidharz-Möbel für Deutschland"
-  description="Maßgefertigte Epoxidharz-Tische und Arbeitsplatten für den deutschen Markt. Elegantes Design, Premium-Qualität."
+  title="Lucy Epoxy Studio | Exklusive Epoxidharz-Tische für Deutschland"
+  description="Maßgefertigte Epoxidharz-Tische mit Holz, Harz und Blumen für den deutschen Markt."
   lang="de"
   pathname="/de/"
   alternates={alternates}
@@ -26,7 +26,17 @@ const alternates = [
         <p class="muted" style="margin-top:.8rem;">Wir verbinden minimalistisches Design mit präziser Handarbeit und klarer Kommunikation vom Entwurf bis zur Umsetzung.</p>
         <a href="/de/kontakt" class="btn btn-primary" style="margin-top:1rem;">Jetzt anfragen</a>
       </div>
-      <img src="/images/hero-table.jpg" alt="Epoxidharz Tisch" style="width:100%;border-radius:16px;object-fit:cover;min-height:300px;" />
+
+      <div style="position:relative;min-height:300px;">
+        <img src="/images/hero-table.jpg" alt="Epoxidharz Tisch" style="width:100%;border-radius:16px;object-fit:cover;min-height:300px;" />
+        <div class="mobile-only" style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;">
+          <span class="logo-magic" style="width:min(320px,78vw);">
+            <img src="/images/logo-lec.png" alt="Lucy Epoxy Studio Hologramm Logo" class="logo-coin" style="width:100%;height:auto;" />
+            <span class="logo-magic__halo"></span>
+            <span class="logo-magic__flash"></span>
+          </span>
+        </div>
+      </div>
     </div>
   </main>
   <Footer />

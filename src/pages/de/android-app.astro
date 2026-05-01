@@ -1,7 +1,29 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/aplikacja' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/mobile-app' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/android-app' },
+];
 ---
 
-<MainLayout title="Android App">
-  <h1>Android App herunterladen</h1>
+<MainLayout
+  title="Android App | Lucy Epoxy Studio"
+  description="Laden Sie die Android-App von Lucy Epoxy Studio direkt von der offiziellen Website herunter."
+  lang="de"
+  pathname="/de/android-app"
+  alternates={alternates}
+>
+  <Header ctaHref="/de/kontakt" ctaLabel="Hilfe" />
+  <main class="section">
+    <div class="container card" style="padding:1.8rem;text-align:center;max-width:760px;">
+      <h1>Android App direkt herunterladen</h1>
+      <p class="muted" style="margin-top:.9rem;">Die App wird außerhalb des Play Store bereitgestellt.</p>
+      <a href="/downloads/lucy-epoxy-studio.apk" class="btn btn-primary" style="margin-top:1.1rem;" download>APK herunterladen</a>
+    </div>
+  </main>
+  <Footer />
 </MainLayout>

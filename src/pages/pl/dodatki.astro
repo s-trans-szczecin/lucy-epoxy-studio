@@ -1,0 +1,34 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/dodatki' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/accessories' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/zubehoer' },
+];
+---
+
+<MainLayout
+  title="Dodatki | Lucy Epoxy Studio"
+  description="Dodatki i akcesoria do stołów i projektów z żywicy epoksydowej: nogi, podstawy, wykończenia i detale premium."
+  lang="pl"
+  pathname="/pl/dodatki"
+  alternates={alternates}
+>
+  <Header ctaHref="/pl/kontakt" ctaLabel="Wyceń projekt" />
+  <main class="section-sm">
+    <div class="container">
+      <p class="gold">Oferta</p>
+      <h1 style="margin-top:.5rem;">Dodatki i akcesoria</h1>
+      <p class="muted" style="max-width:62ch;margin-top:.7rem;">Dobieramy dodatki do charakteru wnętrza i stylu blatu: od nowoczesnych podstaw po eleganckie wykończenia.</p>
+      <div class="grid" style="margin-top:1.5rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+        <img src="/images/project5.jpg" alt="Dodatki do stołu z żywicy epoksydowej" style="width:100%;border-radius:14px;" loading="lazy" />
+        <img src="/images/project6.jpg" alt="Wykończenia premium do blatu" style="width:100%;border-radius:14px;" loading="lazy" />
+        <img src="/images/project7.jpg" alt="Akcesoria do realizacji epoxy" style="width:100%;border-radius:14px;" loading="lazy" />
+      </div>
+    </div>
+  </main>
+  <Footer />
+</MainLayout>

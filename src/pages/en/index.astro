@@ -11,7 +11,7 @@ const alternates = [
 ---
 
 <MainLayout
-  title="Lucy Epoxy Studio | Premium Epoxy Resin Furniture in Europe"
+  title="Lucy Epoxy Studio | Premium Epoxy Resin Tables in Europe"
   description="Custom epoxy tables, countertops and interior details for clients across the EU. Elegant design, precision craftsmanship."
   lang="en"
   pathname="/en/"
@@ -22,11 +22,21 @@ const alternates = [
     <div class="container card" style="padding:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;align-items:center;">
       <div>
         <p class="gold">EU Market</p>
-        <h1 style="margin-top:.5rem;">Premium epoxy craftsmanship for modern interiors</h1>
+        <h1 style="margin-top:.5rem;">Premium epoxy table craftsmanship for modern interiors</h1>
         <p class="muted" style="margin-top:.8rem;">We support private and business clients across Europe with clear communication, minimal style and handcrafted quality.</p>
         <a href="/en/contact" class="btn btn-primary" style="margin-top:1rem;">Request a quote</a>
       </div>
-      <img src="/images/hero-table.jpg" alt="Epoxy table project" style="width:100%;border-radius:16px;object-fit:cover;min-height:300px;" />
+
+      <div style="position:relative;min-height:300px;">
+        <img src="/images/hero-table.jpg" alt="Epoxy table project" style="width:100%;border-radius:16px;object-fit:cover;min-height:300px;" />
+        <div class="mobile-only" style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;">
+          <span class="logo-magic" style="width:min(320px,78vw);">
+            <img src="/images/logo-lec.png" alt="Lucy Epoxy Studio hologram logo" class="logo-coin" style="width:100%;height:auto;" />
+            <span class="logo-magic__halo"></span>
+            <span class="logo-magic__flash"></span>
+          </span>
+        </div>
+      </div>
     </div>
   </main>
   <Footer />

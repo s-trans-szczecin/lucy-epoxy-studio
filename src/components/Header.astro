@@ -4,31 +4,62 @@ interface Props {
   ctaLabel?: string;
 }
 
-const { ctaHref = '/pl/kontakt', ctaLabel = 'Zapytaj o wycenę' } = Astro.props as Props;
+const pathname = Astro.url.pathname;
+const lang = pathname.startsWith('/en') ? 'en' : pathname.startsWith('/de') ? 'de' : 'pl';
+
+const navMap = {
+  pl: {
+    home: '/',
+    projects: '/pl/realizacje',
+    contact: '/pl/kontakt',
+    app: '/pl/aplikacja',
+    extras: '/pl/dodatki',
+    labels: { home: 'Home', projects: 'Projekty', contact: 'Kontakt', app: 'Aplikacja', extras: 'Dodatki', cta: 'Zapytaj o wycenę' },
+  },
+  en: {
+    home: '/en/',
+    projects: '/en/projects',
+    contact: '/en/contact',
+    app: '/en/mobile-app',
+    extras: '/en/accessories',
+    labels: { home: 'Home', projects: 'Projects', contact: 'Contact', app: 'Mobile app', extras: 'Accessories', cta: 'Get a quote' },
+  },
+  de: {
+    home: '/de/',
+    projects: '/de/realisierungen',
+    contact: '/de/kontakt',
+    app: '/de/android-app',
+    extras: '/de/zubehoer',
+    labels: { home: 'Home', projects: 'Projekte', contact: 'Kontakt', app: 'Android App', extras: 'Zubehör', cta: 'Angebot' },
+  },
+} as const;
+
+const current = navMap[lang];
+const { ctaHref = current.contact, ctaLabel = current.labels.cta } = Astro.props as Props;
 ---
 
 <header style="position:sticky;top:0;z-index:60;background:rgba(247,243,238,.92);border-bottom:1px solid #e6ddce;backdrop-filter:blur(7px);">
-  <div class="container" style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.2rem;padding:.95rem 0;">
-    <a href="/" style="display:flex;align-items:center;gap:.75rem;min-width:max-content;">
-      <span class="logo-magic" style="width:50px;height:50px;">
-        <img src="/images/logoLEC.png" alt="LE emblem" class="logo-coin" style="width:50px;height:50px;display:block;object-fit:cover;" />
+  <div class="container site-header-grid">
+    <div class="site-actions-panel">
+      <nav class="site-nav-buttons">
+        <a href={current.home} class="btn btn-secondary nav-btn">{current.labels.home}</a>
+        <a href={current.projects} class="btn btn-secondary nav-btn">{current.labels.projects}</a>
+        <a href={current.extras} class="btn btn-secondary nav-btn">{current.labels.extras}</a>
+        <a href={current.contact} class="btn btn-secondary nav-btn">{current.labels.contact}</a>
+        <a href={current.app} class="btn btn-secondary nav-btn">{current.labels.app}</a>
+        <a href="/" class="btn btn-secondary nav-btn">PL</a>
+        <a href="/en/" class="btn btn-secondary nav-btn">EN</a>
+        <a href="/de/" class="btn btn-secondary nav-btn">DE</a>
+      </nav>
+      <a href={ctaHref} class="btn btn-primary site-quote-btn">{ctaLabel}</a>
+    </div>
+
+    <a href={current.home} class="site-brand-link">
+      <span class="logo-magic" style="width:148px;max-width:42vw;">
+        <img src="/images/logo-lec.png" alt="Lucy Epoxy Studio logo" class="logo-coin" style="width:100%;height:auto;" />
         <span class="logo-magic__halo"></span>
         <span class="logo-magic__flash"></span>
       </span>
-      <div style="line-height:1.1;">
-        <strong style="font-family:'Playfair Display',serif;font-size:1.2rem;letter-spacing:.08em;color:#a8894d;">LUCY EPOXY</strong>
-        <small style="display:block;letter-spacing:.38em;color:#9c8b69;">STUDIO</small>
-      </div>
     </a>
-
-    <nav style="justify-self:center;display:flex;gap:.55rem;flex-wrap:wrap;font-size:.92rem;">
-      <a href="/" class="btn btn-secondary" style="min-height:38px;padding:.38rem .78rem;">Home</a>
-      <a href="/pl/realizacje" class="btn btn-secondary" style="min-height:38px;padding:.38rem .78rem;">Realizacje</a>
-      <a href="/pl/kontakt" class="btn btn-secondary" style="min-height:38px;padding:.38rem .78rem;">Kontakt</a>
-      <a href="/en/" class="btn btn-secondary" style="min-height:38px;padding:.38rem .78rem;">EN</a>
-      <a href="/de/" class="btn btn-secondary" style="min-height:38px;padding:.38rem .78rem;">DE</a>
-    </nav>
-
-    <a href={ctaHref} class="btn btn-primary" style="min-height:42px;padding:.58rem 1rem;">{ctaLabel}</a>
   </div>
 </header>
