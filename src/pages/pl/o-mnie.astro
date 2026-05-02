@@ -21,22 +21,22 @@ Wybierając moje usługi, wspierasz nie tylko mały biznes, ale także historię
     .signature-animate {
       font-family: cursive;
       color: #b8954f;
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-size: clamp(1.15rem, 2.6vw, 1.55rem);
       transform: rotate(-6deg);
       opacity: .95;
       white-space: nowrap;
       width: 0;
       overflow: hidden;
       border-right: 2px solid rgba(184,149,79,.7);
-      animation: sign-write 5.2s steps(28) infinite;
-      filter: blur(.35px);
-      letter-spacing: .02em;
+      animation: sign-write 6.4s cubic-bezier(.22,.61,.36,1) infinite;
+      filter: blur(.9px);
+      letter-spacing: .045em; text-shadow: 0 0 2px rgba(184,149,79,.28);
     }
     @keyframes sign-write {
       0% { width: 0; opacity: 0; }
-      8% { opacity: .95; }
-      55% { width: 19ch; opacity: .95; }
-      75% { width: 19ch; opacity: .95; border-right-color: transparent; }
+      10% { opacity: .9; }
+      62% { width: 19ch; opacity: .88; }
+      78% { width: 19ch; opacity: .82; border-right-color: transparent; }
       100% { width: 0; opacity: 0; border-right-color: rgba(184,149,79,.7); }
     }
   </style>
