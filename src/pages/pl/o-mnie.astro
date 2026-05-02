@@ -12,32 +12,34 @@ Jako osoba z niepełnosprawnością długo szukałam swojego miejsca — nie tyl
 
 To, co zaczęło się jako pomysł na własny biznes, z czasem przerodziło się w prawdziwą pasję. W swojej pracy odnalazłam siebie, sens i radość tworzenia. Każde zlecenie wykonuję z sercem, starannością i wdzięcznością, bo wiem, jak wiele znaczy możliwość robienia tego, co się kocha.
 
-Wybierając moje usługi, wspierasz nie tylko mały biznes, ale także historię pełną determinacji, odwagi i wiary, że marzenia można spełniać mimo przeciwności. Zapraszam Cię do współpracy — tworzę z pasji i dla ludzi.
+Wybierając moje usługi, wspierasz nie tylko mały biznes, ale także historię pełną determinacji, odwagi i wiary, że marzenia można spełniać mimo przeciwności. Tworzę z pasji i dla ludzi.
     </article>
-    <p class="signature-animate">Lυcуηα Zαωαdzкα-Szpαк</p>
+    
+    <div class="signature-box">
+      <p class="invite-text">Zapraszam do współpracy,</p>
+      <p class="signature">Lυcуηα Zαωαdzкα-Szpαк</p>
+    </div>
   </div></main>
   <Footer />
   <style>
-    .signature-animate {
-      font-family: cursive;
-      color: #b8954f;
-      font-size: clamp(1.15rem, 2.6vw, 1.55rem);
-      transform: rotate(-6deg);
-      opacity: .95;
-      white-space: nowrap;
-      width: 0;
-      overflow: hidden;
-      border-right: 2px solid rgba(184,149,79,.7);
-      animation: sign-write 6.4s cubic-bezier(.22,.61,.36,1) infinite;
-      filter: blur(.9px);
-      letter-spacing: .045em; text-shadow: 0 0 2px rgba(184,149,79,.28);
+    .signature-box {
+      padding: 0.5rem 1.3rem;
+      margin-top: 0.5rem;
     }
-    @keyframes sign-write {
-      0% { width: 0; opacity: 0; }
-      10% { opacity: .9; }
-      62% { width: 19ch; opacity: .88; }
-      78% { width: 19ch; opacity: .82; border-right-color: transparent; }
-      100% { width: 0; opacity: 0; border-right-color: rgba(184,149,79,.7); }
+    .invite-text {
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
+      color: inherit;
+    }
+    .signature {
+      font-family: 'Segoe Script', 'Brush Script MT', cursive;
+      color: #b8954f;
+      font-size: clamp(1.3rem, 2.8vw, 1.7rem);
+      transform: rotate(-5deg);
+      display: inline-block;
+      opacity: 0.95;
+      font-weight: 300; /* Cieńsza linia naśladująca pióro */
+      letter-spacing: 0.03em;
     }
   </style>
 </MainLayout>

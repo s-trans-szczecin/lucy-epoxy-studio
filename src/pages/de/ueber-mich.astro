@@ -11,31 +11,33 @@ import Footer from '../../components/Footer.astro';
 
 Was als Idee für ein eigenes Unternehmen begann, entwickelte sich mit der Zeit zu echter Leidenschaft. In meiner Arbeit fand ich mich selbst, Sinn und die Freude am Schaffen. Jeden Auftrag führe ich mit Herz, Sorgfalt und Dankbarkeit aus, denn ich weiß, wie viel es bedeutet, das zu tun, was man liebt.
 
-Wenn Sie sich für meine Leistungen entscheiden, unterstützen Sie nicht nur ein kleines Unternehmen, sondern auch eine Geschichte voller Entschlossenheit, Mut und dem Glauben daran, dass Träume trotz Hindernissen wahr werden können. Ich lade Sie zur Zusammenarbeit ein — ich arbeite mit Leidenschaft und für Menschen.</article>
-    <p class="signature-animate">Lυcуηα Zαωαdzкα-Szpαк</p>
+Wenn Sie sich für meine Leistungen entscheiden, unterstützen Sie nicht nur ein kleines Unternehmen, sondern auch eine Geschichte voller Entschlossenheit, Mut und dem Glauben daran, dass Träume trotz Hindernissen wahr werden können. Ich arbeite mit Leidenschaft und für Menschen.</article>
+    
+    <div class="signature-box">
+      <p class="invite-text">Ich lade Sie zur Zusammenarbeit ein,</p>
+      <p class="signature">Lυcуηα Zαωαdzкα-Szpαк</p>
+    </div>
   </div></main>
   <Footer />
   <style>
-    .signature-animate {
-      font-family: cursive;
-      color: #b8954f;
-      font-size: clamp(1.15rem, 2.6vw, 1.55rem);
-      transform: rotate(-6deg);
-      opacity: .95;
-      white-space: nowrap;
-      width: 0;
-      overflow: hidden;
-      border-right: 2px solid rgba(184,149,79,.7);
-      animation: sign-write 6.4s cubic-bezier(.22,.61,.36,1) infinite;
-      filter: blur(.9px);
-      letter-spacing: .045em; text-shadow: 0 0 2px rgba(184,149,79,.28);
+    .signature-box {
+      padding: 0.5rem 1.3rem;
+      margin-top: 0.5rem;
     }
-    @keyframes sign-write {
-      0% { width: 0; opacity: 0; }
-      10% { opacity: .9; }
-      62% { width: 19ch; opacity: .88; }
-      78% { width: 19ch; opacity: .82; border-right-color: transparent; }
-      100% { width: 0; opacity: 0; border-right-color: rgba(184,149,79,.7); }
+    .invite-text {
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
+      color: inherit;
+    }
+    .signature {
+      font-family: 'Segoe Script', 'Brush Script MT', cursive;
+      color: #b8954f;
+      font-size: clamp(1.3rem, 2.8vw, 1.7rem);
+      transform: rotate(-5deg);
+      display: inline-block;
+      opacity: 0.95;
+      font-weight: 300;
+      letter-spacing: 0.03em;
     }
   </style>
 </MainLayout>
