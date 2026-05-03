@@ -1,0 +1,59 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/stol-z-zywicy-na-zamowienie' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/custom-epoxy-table' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/epoxidharz-tisch-nach-mass' },
+];
+---
+
+<MainLayout
+  title="Epoxidharz Tisch nach Maß | Lucy Epoxy Studio"
+  description="Maßgefertigte Epoxidharz Tische aus Holz und Resin. Individuelle Projekte für Kunden in Deutschland und Europa."
+  lang="de"
+  pathname="/de/epoxidharz-tisch-nach-mass"
+  alternates={alternates}
+>
+  <Header ctaHref="/de/kontakt" ctaLabel="Angebot anfragen" />
+
+  <main class="section-sm">
+    <div class="container" style="max-width:900px;">
+
+      <h1>Epoxidharz Tisch nach Maß</h1>
+
+      <p class="muted" style="margin-top:1rem;">
+        Ich fertige exklusive Epoxidharz Tische nach Maß für Kunden in Deutschland und ganz Europa.
+        Jeder Tisch ist ein Unikat – gefertigt aus massivem Holz, Epoxidharz und natürlichen Materialien.
+      </p>
+
+      <img src="/images/project1.jpg" alt="Epoxidharz Tisch aus Holz und Resin" style="width:100%;margin-top:1.5rem;border-radius:14px;" />
+
+      <h2 style="margin-top:2rem;">Individuelle Projekte</h2>
+      <p class="muted">
+        Jeder Tisch wird individuell geplant – von der Auswahl des Holzes bis zur finalen Verarbeitung.
+        Ob River Table, Esstisch oder Couchtisch – ich setze Ihre Vision um.
+      </p>
+
+      <h2 style="margin-top:2rem;">Warum ein Epoxidharz Tisch?</h2>
+      <p class="muted">
+        Epoxidharz Tische verbinden natürliche Schönheit von Holz mit modernem Design.
+        Sie sind langlebig, einzigartig und ein echtes Highlight in jedem Interieur.
+      </p>
+
+      <h2 style="margin-top:2rem;">Lieferung nach Deutschland</h2>
+      <p class="muted">
+        Ich realisiere Projekte für Kunden in ganz Deutschland – inklusive Lieferung und Beratung.
+      </p>
+
+      <a href="/de/kontakt" class="btn btn-primary" style="margin-top:2rem;">
+        Angebot anfragen
+      </a>
+
+    </div>
+  </main>
+
+  <Footer />
+</MainLayout>
