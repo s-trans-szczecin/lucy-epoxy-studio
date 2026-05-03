@@ -15,7 +15,19 @@ const navMap = {
     app: '/pl/aplikacja',
     extras: '/pl/dodatki',
     about: '/pl/o-mnie',
-    labels: { home: 'Home', projects: 'Projekty', about: 'O mnie', contact: 'Kontakt', app: 'Aplikacja', extras: 'Dodatki', cta: 'Zapytaj o wycenę' },
+    policy: '/pl/polityka',
+    safety: '/pl/bezpieczenstwo',
+    labels: { 
+      home: 'Home', 
+      projects: 'Projekty', 
+      about: 'O mnie', 
+      contact: 'Kontakt', 
+      app: 'Aplikacja', 
+      extras: 'Dodatki',
+      policy: 'Polityka',
+      safety: 'Bezpieczeństwo',
+      cta: 'Zapytaj o wycenę' 
+    },
   },
   en: {
     home: '/en/',
@@ -24,13 +36,17 @@ const navMap = {
     app: '/en/mobile-app',
     extras: '/en/accessories',
     about: '/en/about',
+    policy: '/en/privacy-policy',
+    safety: '/en/product-safety',
     labels: { 
       home: 'Home', 
       projects: 'Projects', 
       about: 'About me', 
       contact: 'Contact', 
       app: 'Mobile app', 
-      extras: 'Accessories', 
+      extras: 'Accessories',
+      policy: 'Policy',
+      safety: 'Safety',
       cta: 'Get a quote' 
     },
   },
@@ -41,7 +57,19 @@ const navMap = {
     app: '/de/android-app',
     extras: '/de/zubehoer',
     about: '/de/ueber-mich',
-    labels: { home: 'Home', projects: 'Projekte', about: 'Über mich', contact: 'Kontakt', app: 'Android App', extras: 'Zubehör', cta: 'Angebot' },
+    policy: '/de/datenschutz',
+    safety: '/de/produktsicherheit',
+    labels: { 
+      home: 'Home', 
+      projects: 'Projekte', 
+      about: 'Über mich', 
+      contact: 'Kontakt', 
+      app: 'Android App', 
+      extras: 'Zubehör',
+      policy: 'Politik',
+      safety: 'Sicherheit',
+      cta: 'Angebot' 
+    },
   },
 } as const;
 
@@ -59,16 +87,17 @@ const { ctaHref = current.contact, ctaLabel = current.labels.cta } = Astro.props
         <a href={current.about} class="btn btn-secondary nav-btn">{current.labels.about}</a>
         <a href={current.contact} class="btn btn-secondary nav-btn">{current.labels.contact}</a>
         <a href={current.app} class="btn btn-secondary nav-btn">{current.labels.app}</a>
+
+        <!-- NOWE PRZYCISKI -->
+        <a href={current.policy} class="btn btn-secondary nav-btn">{current.labels.policy}</a>
+        <a href={current.safety} class="btn btn-secondary nav-btn">{current.labels.safety}</a>
+
+        <!-- JĘZYKI -->
         <a href="/" class="btn btn-secondary nav-btn">PL</a>
         <a href="/en/" class="btn btn-secondary nav-btn">EN</a>
         <a href="/de/" class="btn btn-secondary nav-btn">DE</a>
-	    <a class="nav-btn" href="/pl/polityka">Polityka</a> 
-<a class="nav-btn" href="/pl/bezpieczenstwo">Bezpieczeństwo</a> 
-<a class="nav-btn" href="/en/privacy-policy">Policy</a> 
-<a class="nav-btn" href="/en/product-safety">Safety</a> 
-<a class="nav-btn" href="/de/datenschutz">Politik</a> 
-<a class="nav-btn" href="/de/produktsicherheit">Sicherheit</a>
       </nav>
+
       <a href={ctaHref} class="btn btn-primary site-quote-btn">{ctaLabel}</a>
     </div>
 
