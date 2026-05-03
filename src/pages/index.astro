@@ -30,13 +30,22 @@ const alternates = [
     <ProjectsSection />
     <AboutSection />
 
-    <!-- 🔥 NOWA SEKCJA SEO -->
+    <!-- 🔥 NOWA SEKCJA SEO + 360 -->
     <section class="section-sm">
       <div class="container" style="text-align:center;">
         <h2>Stół z żywicy na zamówienie</h2>
         <p class="muted" style="max-width:600px;margin:auto;">
           Tworzę unikalne stoły dopasowane do Twojego wnętrza. Każdy projekt powstaje ręcznie z drewna i żywicy epoksydowej.
         </p>
+
+        <!-- 🔥 360 VIEW -->
+        <div id="table360" style="margin-top:1.5rem;">
+          <img 
+            id="frame360"
+            src="/images/360/frame_0_0.png"
+            style="width:100%;max-width:500px;border-radius:12px;"
+          />
+        </div>
 
         <a href="/pl/stol-z-zywicy-na-zamowienie" class="btn btn-primary" style="margin-top:1rem;">
           Zobacz więcej
@@ -48,4 +57,26 @@ const alternates = [
   </main>
 
   <Footer />
+
+  <!-- 🔥 AUTO ROTACJA -->
+  <script>
+    const frames = [];
+    const rows = 6;
+    const cols = 6;
+
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        frames.push(`/images/360/frame_${y}_${x}.png`);
+      }
+    }
+
+    let index = 0;
+    const img = document.getElementById("frame360");
+
+    setInterval(() => {
+      index = (index + 1) % frames.length;
+      img.src = frames[index];
+    }, 80);
+  </script>
+
 </MainLayout>

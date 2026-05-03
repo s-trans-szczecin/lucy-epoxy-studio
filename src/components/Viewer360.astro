@@ -1,0 +1,33 @@
+<div class="table-360">
+  <img id="spin" src="/360/frame_0_0.png" alt="Epoxy table 360 view" />
+</div>
+
+<script>
+  const frames = [
+    "frame_0_0.png","frame_0_1.png","frame_0_2.png","frame_0_3.png","frame_0_4.png","frame_0_5.png",
+    "frame_1_0.png","frame_1_1.png","frame_1_2.png","frame_1_3.png","frame_1_4.png","frame_1_5.png",
+    "frame_2_0.png","frame_2_1.png","frame_2_2.png","frame_2_3.png","frame_2_4.png","frame_2_5.png",
+    "frame_3_0.png","frame_3_1.png","frame_3_2.png","frame_3_3.png","frame_3_4.png","frame_3_5.png",
+    "frame_4_0.png","frame_4_1.png","frame_4_2.png","frame_4_3.png","frame_4_4.png","frame_4_5.png",
+    "frame_5_0.png","frame_5_1.png","frame_5_2.png","frame_5_3.png","frame_5_4.png","frame_5_5.png"
+  ];
+
+  let i = 0;
+  const img = document.getElementById("spin");
+
+  setInterval(() => {
+    img.src = "/360/" + frames[i];
+    i = (i + 1) % frames.length;
+  }, 120); // szybkość (ms)
+</script>
+
+<style>
+.table-360 {
+  max-width: 500px;
+  margin: auto;
+}
+.table-360 img {
+  width: 100%;
+  display: block;
+}
+</style>
