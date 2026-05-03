@@ -1,0 +1,56 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/stol-z-zywicy-na-zamowienie' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/custom-epoxy-table' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/epoxidharz-tisch-nach-mass' },
+];
+---
+
+<MainLayout
+  title="Custom Epoxy Table | Lucy Epoxy Studio"
+  description="Custom epoxy resin tables made from wood and resin. Unique handcrafted projects for clients across Europe."
+  lang="en"
+  pathname="/en/custom-epoxy-table"
+  alternates={alternates}
+>
+  <Header ctaHref="/en/contact" ctaLabel="Get a quote" />
+
+  <main class="section-sm">
+    <div class="container" style="max-width:900px;">
+
+      <h1>Custom Epoxy Table</h1>
+
+      <p class="muted" style="margin-top:1rem;">
+        I create custom epoxy tables tailored to your interior. Each piece is unique.
+      </p>
+
+      <img src="/images/project1.jpg" alt="Custom epoxy table" style="width:100%;margin-top:1.5rem;border-radius:14px;" />
+
+      <h2 style="margin-top:2rem;">Individual projects</h2>
+      <p class="muted">
+        From wood selection to final finish – everything is handcrafted.
+      </p>
+
+      <h2 style="margin-top:2rem;">Why epoxy?</h2>
+      <p class="muted">
+        A blend of natural beauty and modern design. Durable and one-of-a-kind.
+      </p>
+
+      <h2 style="margin-top:2rem;">Delivery across Europe</h2>
+      <p class="muted">
+        I work with clients across the EU.
+      </p>
+
+      <a href="/en/contact" class="btn btn-primary" style="margin-top:2rem;">
+        Get a quote
+      </a>
+
+    </div>
+  </main>
+
+  <Footer />
+</MainLayout>

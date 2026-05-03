@@ -1,0 +1,56 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const alternates = [
+  { hrefLang: 'pl', href: 'https://lucyepoxy.com/pl/stol-z-zywicy-na-zamowienie' },
+  { hrefLang: 'en', href: 'https://lucyepoxy.com/en/custom-epoxy-table' },
+  { hrefLang: 'de', href: 'https://lucyepoxy.com/de/epoxidharz-tisch-nach-mass' },
+];
+---
+
+<MainLayout
+  title="Stół z żywicy na zamówienie | Lucy Epoxy Studio"
+  description="Stoły z żywicy epoksydowej na zamówienie. Unikalne projekty z drewna i żywicy dla klientów w Polsce i Europie."
+  lang="pl"
+  pathname="/pl/stol-z-zywicy-na-zamowienie"
+  alternates={alternates}
+>
+  <Header ctaHref="/pl/kontakt" ctaLabel="Wyceń projekt" />
+
+  <main class="section-sm">
+    <div class="container" style="max-width:900px;">
+
+      <h1>Stół z żywicy na zamówienie</h1>
+
+      <p class="muted" style="margin-top:1rem;">
+        Tworzę stoły z żywicy epoksydowej na zamówienie. Każdy projekt jest unikalny i dopasowany do Twojego wnętrza.
+      </p>
+
+      <img src="/images/project1.jpg" alt="Stół z żywicy epoksydowej" style="width:100%;margin-top:1.5rem;border-radius:14px;" />
+
+      <h2 style="margin-top:2rem;">Indywidualne projekty</h2>
+      <p class="muted">
+        Od wyboru drewna po finalne wykończenie – każdy detal jest tworzony ręcznie.
+      </p>
+
+      <h2 style="margin-top:2rem;">Dlaczego stół z żywicy?</h2>
+      <p class="muted">
+        Połączenie natury i nowoczesnego designu. Trwałość, unikalność i efekt wow.
+      </p>
+
+      <h2 style="margin-top:2rem;">Realizacja w Polsce i UE</h2>
+      <p class="muted">
+        Obsługuję klientów w całej Polsce i Europie.
+      </p>
+
+      <a href="/pl/kontakt" class="btn btn-primary" style="margin-top:2rem;">
+        Wyceń projekt
+      </a>
+
+    </div>
+  </main>
+
+  <Footer />
+</MainLayout>

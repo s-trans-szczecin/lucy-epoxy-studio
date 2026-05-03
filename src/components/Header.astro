@@ -89,11 +89,23 @@ const { ctaHref = current.contact, ctaLabel = current.labels.cta } = Astro.props
   <a href={current.app} class="btn btn-secondary nav-btn">{current.labels.app}</a>
 
   <!-- 🔥 NOWY LINK SEO TYLKO DLA DE -->
-  {lang === 'de' && (
-    <a href="/de/epoxidharz-tisch-nach-mass" class="btn btn-secondary nav-btn">
-      Maßanfertigung
-    </a>
-  )}
+ {lang === 'de' && (
+  <a href="/de/epoxidharz-tisch-nach-mass" class="btn btn-secondary nav-btn">
+    Maßanfertigung
+  </a>
+)}
+
+{lang === 'pl' && (
+  <a href="/pl/stol-z-zywicy-na-zamowienie" class="btn btn-secondary nav-btn">
+    Na zamówienie
+  </a>
+)}
+
+{lang === 'en' && (
+  <a href="/en/custom-epoxy-table" class="btn btn-secondary nav-btn">
+    Custom
+  </a>
+)}
 
   <!-- ISTNIEJĄCE -->
   <a href={current.policy} class="btn btn-secondary nav-btn">{current.labels.policy}</a>
