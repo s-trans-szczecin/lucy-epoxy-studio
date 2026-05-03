@@ -370,5 +370,26 @@ const ogImageUrl = new URL(ogImage, siteUrl).toString();
   </head>
   <body>
     <slot />
+	<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#222;color:#fff;padding:1rem;text-align:center;z-index:999;">
+  Ta strona używa cookies.
+  <button id="cookie-ok" style="margin-left:1rem;">OK</button>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const banner = document.getElementById('cookie-banner');
+    const btn = document.getElementById('cookie-ok');
+
+    if (localStorage.getItem('cookiesAccepted')) {
+      banner.style.display = 'none';
+    }
+
+    btn.addEventListener('click', function () {
+      localStorage.setItem('cookiesAccepted', 'true');
+      banner.style.display = 'none';
+    });
+  });
+</script>
   </body>
 </html>

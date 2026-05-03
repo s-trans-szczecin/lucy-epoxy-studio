@@ -1,0 +1,59 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<MainLayout 
+  title="Privacy Policy | Lucy Epoxy Studio" 
+  description="Privacy policy, cookies and terms of use." 
+  lang="en" 
+  pathname="/en/privacy-policy"
+>
+  <Header ctaHref="/en/contact" ctaLabel="Get a quote" />
+
+  <main class="section-sm">
+    <div class="container card" style="padding:1.5rem; line-height:1.7;">
+
+      <h1>Privacy Policy, Cookies and Terms of Use</h1>
+
+      <h2>1. Data Controller</h2>
+      <p>
+        The data controller is Lucy Epoxy Studio.
+      </p>
+
+      <h2>2. Scope of Data</h2>
+      <p>
+        We process personal data provided voluntarily via the contact form, such as name, email address and message content.
+      </p>
+
+      <h2>3. Purpose of Processing</h2>
+      <p>
+        Data is processed for the purpose of responding to inquiries and providing services.
+      </p>
+
+      <h2>4. Cookies</h2>
+      <p>
+        This website uses cookies for technical and analytical purposes. Cookies help ensure proper functioning of the website.
+      </p>
+
+      <h2>5. User Rights</h2>
+      <p>
+        You have the right to access your data, request correction, deletion, or limitation of processing.
+      </p>
+
+      <h2>6. Terms of Use</h2>
+      <p>
+        By using this website, you accept these terms and conditions.
+      </p>
+
+      <h2>7. Contact</h2>
+      <p>
+        For any privacy-related inquiries, please contact us via the contact form.
+      </p>
+
+    </div>
+  </main>
+
+  <Footer />
+</MainLayout>
